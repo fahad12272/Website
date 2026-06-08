@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz — Omniscience</title>
+  <meta name="description" content="Modern timed quizzes to test your knowledge across algorithms, data structures and systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="global.css">
+</head>
+<body>
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a class="brand" href="index.html"><span class="brand-logo">Ω</span><span>Omniscience</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="problems.html">Problems</a>
+        <a href="quiz.html" class="active">Quizzes</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="profile.html">Profile</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#" class="btn btn-ghost btn-sm hide-mobile">Sign in</a>
+        <a href="#" class="btn btn-primary btn-sm">Submit Quiz</a>
+      </div>
+    </nav>
+  </header>
+  <main class="page container">
+    <div class="page-header anim-up">
+      <div>
+        <span class="eyebrow">Live exam</span>
+        <h1 style="margin-top:10px;">Weekly Challenge · <span class="gradient-text">Algorithms 101</span></h1>
+        <p>10 questions · 15 minutes · 100 XP per correct answer.</p>
+      </div>
+      <div class="row">
+        <span class="badge badge-info">Question 4 / 10</span>
+        <div class="timer"><span class="dot red"></span> 09:42</div>
+      </div>
+    </div>
+    <section class="quiz-shell">
+      <!-- Progress -->
+      <div class="quiz-progress anim-up delay-1" aria-label="Quiz progress">
+        <span class="done"></span><span class="done"></span><span class="done"></span>
+        <span class="current"></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <article class="quiz-card anim-up delay-2">
+        <div class="quiz-meta">
+          <span class="badge badge-warn">Medium · 100 XP</span>
+          <span>Category: <strong style="color:var(--text);">Time Complexity</strong></span>
+        </div>
+        <h2 style="font-size: clamp(1.25rem, 2.4vw, 1.7rem);">
+          What is the time complexity of searching for an element in a balanced binary search tree of <em>n</em> nodes?
+        </h2>
+        <fieldset class="choices" style="border:none;">
+          <legend class="sr-only" style="position:absolute; left:-9999px;">Choose one answer</legend>
+          <label class="choice">
+            <span class="key">A</span>
+            <span>O(1) — constant time, regardless of input size.</span>
+          </label>
+          <label class="choice correct">
+            <span class="key">B</span>
+            <span>O(log n) — proportional to the height of the tree.</span>
+            <span class="badge badge-success" style="margin-left:auto;">Correct</span>
+          </label>
+          <label class="choice wrong">
+            <span class="key">C</span>
+            <span>O(n) — linear in the number of nodes.</span>
+            <span class="badge badge-danger" style="margin-left:auto;">Your pick</span>
+          </label>
+          <label class="choice">
+            <span class="key">D</span>
+            <span>O(n log n) — worse than linear scanning.</span>
+          </label>
+        </fieldset>
+        <div class="card" style="margin-top:22px; padding:16px; background: rgba(34,211,238,0.06); border-color: rgba(34,211,238,0.25);">
+          <strong style="color: var(--accent-3);">Explanation</strong>
+          <p class="text-sm" style="margin-top:6px;">In a balanced BST (e.g. AVL or Red-Black tree), the height is bounded by O(log n). Search descends the tree from root to leaf, comparing once per level — yielding O(log n) lookups.</p>
+        </div>
+        <div class="between" style="margin-top:24px; flex-wrap:wrap; gap:12px;">
+          <button class="btn btn-ghost">← Previous</button>
+          <div class="row">
+            <button class="btn btn-outline">Skip</button>
+            <button class="btn btn-primary">Next question →</button>
+          </div>
+        </div>
+      </article>
+      <!-- Results preview -->
+      <section style="margin-top:48px;">
+        <div class="between" style="margin-bottom:16px;">
+          <div>
+            <span class="eyebrow">Result preview</span>
+            <h2 style="margin-top:10px;">Your performance so far</h2>
+          </div>
+          <span class="badge badge-accent">Live</span>
+        </div>
+        <div class="result-grid">
+          <div class="kpi accent">
+            <span class="lbl">Score</span>
+            <span class="val">230 <span style="font-size:.9rem; color:var(--text-muted);">/ 1000</span></span>
+            <div class="progress" style="margin-top:6px;"><span style="width:23%"></span></div>
+          </div>
+          <div class="kpi">
+            <span class="lbl">Correct</span>
+            <span class="val" style="color:var(--success);">3</span>
+            <span class="delta">↑ 75% accuracy</span>
+          </div>
+          <div class="kpi">
+            <span class="lbl">Incorrect</span>
+            <span class="val" style="color:var(--danger);">1</span>
+            <span class="delta" style="color:var(--text-muted);">Review later</span>
+          </div>
+          <div class="kpi">
+            <span class="lbl">Avg. time / Q</span>
+            <span class="val">42s</span>
+            <span class="delta">Faster than 71% of users</span>
+          </div>
+        </div>
+        <!-- Breakdown -->
+        <div class="card" style="margin-top:20px;">
+          <h3>Question breakdown</h3>
+          <div class="divider"></div>
+          <div class="stack" style="gap:10px;">
+            <div class="between"><span><span class="dot green"></span> Q1 · Arrays</span><span class="text-muted text-sm">28s · +100 XP</span></div>
+            <div class="between"><span><span class="dot green"></span> Q2 · Hash Maps</span><span class="text-muted text-sm">36s · +100 XP</span></div>
+            <div class="between"><span><span class="dot green"></span> Q3 · Sorting</span><span class="text-muted text-sm">41s · +100 XP</span></div>
+            <div class="between"><span><span class="dot red"></span> Q4 · Trees (current)</span><span class="text-muted text-sm">— · in progress</span></div>
+            <div class="between" style="opacity:.6;"><span><span class="dot"></span> Q5 — Q10</span><span class="text-muted text-sm">Locked</span></div>
+          </div>
+        </div>
+      </section>
+      <!-- Empty / next-up suggestion -->
+      <section style="margin-top:48px;">
+        <div class="cta">
+          <span class="eyebrow">Next up</span>
+          <h2 style="margin-top:14px;">Try the <span class="gradient-text">System Design Sprint</span></h2>
+          <p style="max-width:520px; margin: 12px auto 0;">A 20-minute timed scenario quiz on scalability, caching and consistency trade-offs.</p>
+          <div class="row" style="justify-content:center; margin-top:20px;">
+            <a class="btn btn-primary btn-lg" href="#">Start sprint →</a>
+            <a class="btn btn-outline btn-lg" href="leaderboard.html">See top scorers</a>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-bottom" style="border:none; margin-top:0;">
+      <span>© 2026 Omniscience Labs.</span>
+      <span>Quiz engine v4.2</span>
+    </div>
+  </footer>
+</body>
+</html>
