@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Problems — Omniscience</title>
+  <meta name="description" content="Browse and solve coding problems in an immersive split-layout workspace." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+</head>
+<body>
+  <header class="nav-wrap">
+    <nav class="nav container" aria-label="Primary">
+      <a class="brand" href="index.html"><span class="brand-logo">Ω</span><span>Omniscience</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="problems.html" class="active">Problems</a>
+        <a href="quiz.html">Quizzes</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="profile.html">Profile</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#" class="btn btn-ghost btn-sm hide-mobile">Sign in</a>
+        <a href="#" class="btn btn-primary btn-sm">Run Solution</a>
+      </div>
+    </nav>
+  </header>
+  <main class="page container">
+    <div class="page-header anim-up">
+      <div>
+        <span class="eyebrow">Workspace</span>
+        <h1 style="margin-top:10px;">Two Sum · <span class="gradient-text">Optimized</span></h1>
+        <p>Find indices of two numbers in an array that add up to a target.</p>
+      </div>
+      <div class="row">
+        <div class="search" style="min-width:240px;">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input class="input" placeholder="Search problems…" />
+        </div>
+        <button class="btn btn-ghost btn-sm">⭐ Bookmark</button>
+        <button class="btn btn-primary btn-sm">▶ Run</button>
+      </div>
+    </div>
+    <div class="workspace">
+      <!-- Sidebar -->
+      <aside class="sidebar anim-up delay-1">
+        <div class="search">
+          <span class="search-icon">🔍</span>
+          <input class="input" placeholder="Filter…" />
+        </div>
+        <h4>Difficulty</h4>
+        <a href="#" class="active"><span>All</span><span class="badge">3,240</span></a>
+        <a href="#"><span>Easy</span><span class="badge badge-success">1,124</span></a>
+        <a href="#"><span>Medium</span><span class="badge badge-warn">1,438</span></a>
+        <a href="#"><span>Hard</span><span class="badge badge-danger">678</span></a>
+        <h4>Categories</h4>
+        <a href="#"><span>Arrays</span><span class="text-xs text-muted">412</span></a>
+        <a href="#"><span>Strings</span><span class="text-xs text-muted">298</span></a>
+        <a href="#"><span>Hash Maps</span><span class="text-xs text-muted">186</span></a>
+        <a href="#"><span>Trees</span><span class="text-xs text-muted">241</span></a>
+        <a href="#"><span>Graphs</span><span class="text-xs text-muted">198</span></a>
+        <a href="#"><span>Dynamic Programming</span><span class="text-xs text-muted">312</span></a>
+        <a href="#"><span>Greedy</span><span class="text-xs text-muted">144</span></a>
+        <a href="#"><span>Backtracking</span><span class="text-xs text-muted">88</span></a>
+        <h4>Status</h4>
+        <a href="#"><span class="dot green" style="margin-right:8px;"></span>Solved · 1,284</a>
+        <a href="#"><span class="dot amber" style="margin-right:8px;"></span>Attempted · 184</a>
+        <a href="#"><span class="dot red" style="margin-right:8px;"></span>Todo · 1,772</a>
+      </aside>
+      <!-- Problem statement panel -->
+      <section class="panel anim-up delay-2" aria-label="Problem statement">
+        <div class="panel-header">
+          <div class="tabs" role="tablist">
+            <input id="tab-desc" name="prob" class="tab-input" type="radio" checked />
+            <label for="tab-desc">Description</label>
+            <input id="tab-ex" name="prob" class="tab-input" type="radio" />
+            <label for="tab-ex">Examples</label>
+            <input id="tab-notes" name="prob" class="tab-input" type="radio" />
+            <label for="tab-notes">Notes</label>
+            <input id="tab-disc" name="prob" class="tab-input" type="radio" />
+            <label for="tab-disc">Discussion</label>
+          </div>
+          <div class="row" style="gap:6px;">
+            <span class="badge badge-warn">Medium</span>
+            <span class="badge badge-info">Acceptance 48%</span>
+          </div>
+        </div>
+        <div class="panel-body">
+          <h3>Two Sum</h3>
+          <p style="margin-top:10px;">Given an array of integers <code style="background:rgba(255,255,255,.06);padding:2px 6px;border-radius:6px;">nums</code> and an integer <code style="background:rgba(255,255,255,.06);padding:2px 6px;border-radius:6px;">target</code>, return indices of the two numbers such that they add up to <em>target</em>.</p>
+          <p style="margin-top:10px;">You may assume that each input has <strong>exactly one solution</strong>, and you may not use the same element twice. You can return the answer in any order.</p>
+          <h4 style="margin-top:22px; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted);">Example 1</h4>
+          <div class="card" style="padding:14px; margin-top:8px; background:rgba(255,255,255,0.03);">
+            <p style="font-family:'JetBrains Mono',monospace; color:var(--text);">Input: nums = [2,7,11,15], target = 9</p>
+            <p style="font-family:'JetBrains Mono',monospace; color:var(--success); margin-top:4px;">Output: [0,1]</p>
+            <p style="margin-top:6px; font-size:.88rem;">Because nums[0] + nums[1] == 9.</p>
+          </div>
+          <h4 style="margin-top:22px; font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted);">Constraints</h4>
+          <ul style="margin-top:8px; padding-left:18px; list-style:disc; color:var(--text-muted);">
+            <li>2 ≤ nums.length ≤ 10⁴</li>
+            <li>-10⁹ ≤ nums[i] ≤ 10⁹</li>
+            <li>Only one valid answer exists.</li>
+          </ul>
+          <div class="divider"></div>
+          <h4 style="font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted);">Your Notes</h4>
+          <textarea class="textarea" rows="4" style="margin-top:10px;" placeholder="Sketch your approach, trade-offs, and complexity analysis…"></textarea>
+        </div>
+      </section>
+      <!-- Editor panel -->
+      <section class="panel editor-panel anim-up delay-3" aria-label="Code editor">
+        <div class="panel-header">
+          <div class="row" style="gap:8px;">
+            <select class="select" style="width:auto; padding:6px 10px;">
+              <option>JavaScript</option><option>Python</option><option>C++</option><option>Java</option><option>Go</option>
+            </select>
+            <span class="badge"><span class="dot green"></span> Auto-saved</span>
+          </div>
+          <div class="row" style="gap:6px;">
+            <button class="btn btn-ghost btn-sm">Reset</button>
+            <button class="btn btn-primary btn-sm">Submit</button>
+          </div>
+        </div>
+        <div class="editor">
+          <div class="gutter">1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12</div>
+<pre><span class="tk-com">/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */</span>
+<span class="tk-key">var</span> <span class="tk-fn">twoSum</span> = <span class="tk-key">function</span>(nums, target) {
+  <span class="tk-key">const</span> seen = <span class="tk-key">new</span> <span class="tk-typ">Map</span>();
+  <span class="tk-key">for</span> (<span class="tk-key">let</span> i = <span class="tk-num">0</span>; i &lt; nums.length; i++) {
+    <span class="tk-key">const</span> need = target - nums[i];
+    <span class="tk-key">if</span> (seen.has(need)) <span class="tk-key">return</span> [seen.get(need), i];
+    seen.set(nums[i], i);
+  }
+  <span class="tk-key">return</span> [];
+};
+</pre>
+        </div>
+        <div class="panel-header" style="border-top:1px solid var(--border); border-bottom: none;">
+          <div class="tabs">
+            <input id="t-out" type="radio" name="out" class="tab-input" checked />
+            <label for="t-out">Output</label>
+            <input id="t-tc" type="radio" name="out" class="tab-input" />
+            <label for="t-tc">Testcases</label>
+            <input id="t-cx" type="radio" name="out" class="tab-input" />
+            <label for="t-cx">Complexity</label>
+          </div>
+          <span class="text-xs text-muted">Last run: 2s ago</span>
+        </div>
+        <div class="console">
+          <div><span class="ok">✓ Case 1</span> · [2,7,11,15], 9 → [0,1]</div>
+          <div><span class="ok">✓ Case 2</span> · [3,2,4], 6 → [1,2]</div>
+          <div><span class="ok">✓ Case 3</span> · [3,3], 6 → [0,1]</div>
+          <div style="margin-top:8px;">Runtime <strong style="color:var(--text);">64 ms</strong> · Memory <strong style="color:var(--text);">42.1 MB</strong> · Beats <strong style="color:var(--success);">96.4%</strong></div>
+        </div>
+      </section>
+    </div>
+    <!-- Recent activity -->
+    <section style="margin-top:48px;">
+      <div class="between" style="margin-bottom:20px;">
+        <div>
+          <span class="eyebrow">Recent activity</span>
+          <h2 style="margin-top:10px;">Pick up where you left off</h2>
+        </div>
+        <button class="btn btn-ghost btn-sm">View all</button>
+      </div>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <article class="card">
+          <div class="between">
+            <span class="badge badge-success">Easy</span>
+            <span class="text-xs text-muted">2h ago</span>
+          </div>
+          <h3 style="margin-top:12px;">Valid Parentheses</h3>
+          <p class="text-sm" style="margin-top:6px;">Stack-based validation of bracket pairs.</p>
+          <div class="progress" style="margin-top:14px;"><span style="width:100%"></span></div>
+          <div class="between" style="margin-top:10px;">
+            <span class="text-xs text-muted">Solved</span>
+            <span class="badge badge-info">Stack</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="between">
+            <span class="badge badge-warn">Medium</span>
+            <span class="text-xs text-muted">Yesterday</span>
+          </div>
+          <h3 style="margin-top:12px;">Longest Substring</h3>
+          <p class="text-sm" style="margin-top:6px;">Sliding window with hash set.</p>
+          <div class="progress" style="margin-top:14px;"><span style="width:70%"></span></div>
+          <div class="between" style="margin-top:10px;">
+            <span class="text-xs text-muted">In progress</span>
+            <span class="badge badge-info">Strings</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="between">
+            <span class="badge badge-danger">Hard</span>
+            <span class="text-xs text-muted">3 days ago</span>
+          </div>
+          <h3 style="margin-top:12px;">Median of Two Sorted Arrays</h3>
+          <p class="text-sm" style="margin-top:6px;">Binary search on partition indices.</p>
+          <div class="progress" style="margin-top:14px;"><span style="width:35%"></span></div>
+          <div class="between" style="margin-top:10px;">
+            <span class="text-xs text-muted">Attempted</span>
+            <span class="badge badge-info">Binary Search</span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="between">
+            <span class="badge badge-warn">Medium</span>
+            <span class="text-xs text-muted">Last week</span>
+          </div>
+          <h3 style="margin-top:12px;">LRU Cache</h3>
+          <p class="text-sm" style="margin-top:6px;">Hash map + doubly linked list.</p>
+          <div class="progress" style="margin-top:14px;"><span style="width:100%"></span></div>
+          <div class="between" style="margin-top:10px;">
+            <span class="text-xs text-muted">Solved</span>
+            <span class="badge badge-info">Design</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-bottom" style="border:none; margin-top:0;">
+      <span>© 2026 Omniscience Labs.</span>
+      <span>Pure HTML &amp; CSS · No JavaScript.</span>
+    </div>
+  </footer>
+</body>
+</html>
