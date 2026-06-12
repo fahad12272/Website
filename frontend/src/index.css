@@ -1,0 +1,70 @@
+/* ============================================
+   FAHADÉ - Global Styles & Tailwind Setup
+   ============================================ */
+
+/* Google Fonts Import (MUST BE AT THE VERY TOP) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/* Tailwind Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   BASE STYLES (Luxury Reset)
+   ============================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply font-body text-primary-900 bg-white leading-relaxed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+
+  ::selection {
+    @apply bg-accent/20 text-primary-950;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-primary-50;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-300 rounded-full;
+  }
+}
+
+/* ============================================
+   REUSABLE COMPONENT STYLES
+   ============================================ */
+@layer components {
+  /* Luxury Button Base */
+  .btn-luxury {
+    @apply relative inline-flex items-center justify-center px-8 py-3 
+           text-sm font-medium tracking-widest uppercase transition-all duration-300
+           border border-primary-900 text-primary-900 bg-transparent
+           hover:bg-primary-900 hover:text-white;
+  }
+
+  /* Gold Accent Button */
+  .btn-gold {
+    @apply border-accent text-accent hover:bg-accent hover:text-white;
+  }
+
+  /* Luxury Input Field */
+  .input-luxury {
+    @apply w-full px-4 py-3 bg-transparent border-b border-primary-200 
+           focus:border-primary-900 outline-none transition-colors duration-300
+           placeholder:text-primary-300 text-primary-900;
+  }
+}
